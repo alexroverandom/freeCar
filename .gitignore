@@ -194,3 +194,7 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+/FreeCar.Web/Web.config
+/FreeCar.Entities/App.config
+/FreeCar.DataAccess/App.config
+/FreeCar.Client/App.config

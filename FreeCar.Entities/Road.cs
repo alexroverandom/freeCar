@@ -11,9 +11,9 @@ namespace FreeCar.Entities
     {
         public int Id { get; set; }
 
-        public int FirstPointId { get; set; }
+        //public int FirstPointId { get; set; }
         [JsonIgnore]
-        public RoadPoint FirstPoint { get; set; }
+        public List<RoadPoint> Points { get; set; }
 
 		//public int SecondPointId { get; set; }
 		//[JsonIgnore]
