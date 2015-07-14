@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<div class="header">
+	<div class="menu_block" style="height: 25px;"></div>
+</div>
+
+<div class="center" style="margin-top: 24px;">
+	@if (Thread.CurrentThread.CurrentCulture.Name == "ru-RU")
+	{
+		<h2 style="float: left;   margin-top: 0px;">3д подбор маркиз</h2>
+		<div style="padding-left: 264px; padding-top: 5px;">
+			<a href="/">Вернуться назад на сайт</a>
+		</div>
+	}
+	else
+	{
+		<h2 style="float: left;   margin-top: 0px;">3д підбір маркіз</h2>
+		<div style="padding-left: 264px; padding-top: 5px;">
+			<a href="/ua/">Повернутися назад на сайт</a>
+		</div>
+	}
+	<div class="content" style="padding: 0; clear: both;">
+		<div class="container  center-fixed">
+			@*<div class="row">*@
+
+			<div class="jMainRegion">
+
+			</div>
+			@*</div>*@
+		</div>
+	</div>
+	@Html.Partial("~/Shared/Templates/_cars.cshtml")
+
+
+</div>
+
