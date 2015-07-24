@@ -8,24 +8,31 @@ namespace FreeCar.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
-
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+			bundles.Add(new ScriptBundle("~/bundles/libs").Include(
+						"~/js/libraries/jquery-2.1.0.js",
+						"~/js/libraries/jquery.cookie.js",
+						"~/js/libraries/lodash.js",
+						"~/js/libraries/backbone.marionette/backbone.js",
+						"~/js/libraries/backbone.marionette/backbone.marionette.js",
+						"~/js/libraries/backbone.marionette/backbone.routefilter.js",
+						"~/js/libraries/jsrender.js",
+						"~/js/libraries/ajaxSetup.js",
+						
+						"~/js/libraries/spin.js",
+						"~/js/libraries/modernizr-2.7.1.js",
+						"~/js/libraries/select2/select2.js",
+						"~/js/libraries/select2/select2_locale_ru.js",
+						"~/js/libraries/bootstrap/button.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+						"~/js/bootstrap/modal.js",
+						"~/js/bootstrap/alert.js",
+						"~/js/bootstrap/dropdown.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/css/bootstrap.css"
+                      //"~/css/site.css"
+					  ));
         }
     }
 }

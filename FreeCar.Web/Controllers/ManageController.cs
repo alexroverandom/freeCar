@@ -7,24 +7,23 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FreeCar.Web.Models;
+using FreeCar.DataAccess;
 
 namespace FreeCar.Web.Controllers
 {
     [Authorize]
-    public class ManageController : Controller
+    public class ManageController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
-        public ManageController()
-        {
-        }
+		public ManageController(EntityContext db) : base(db) {}
 
-        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
-        {
-            UserManager = userManager;
-            SignInManager = signInManager;
-        }
+		//public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+		//{
+		//	UserManager = userManager;
+		//	SignInManager = signInManager;
+		//}
 
         public ApplicationSignInManager SignInManager
         {

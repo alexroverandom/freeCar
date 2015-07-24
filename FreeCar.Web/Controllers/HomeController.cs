@@ -8,19 +8,21 @@ using System.Web.Mvc;
 
 namespace FreeCar.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private EntityContext _db = new EntityContext();
+        //private EntityContext _db = new EntityContext();
+
+		public HomeController(EntityContext db) : base(db) { }
         public ActionResult Index()
         {
+			var car = Db.Cars.FirstOrDefault();
+			//var car = new Car()
+			//{
+			//	Name = "Carl",
 
-            var car = new Car()
-            {
-                Name = "Carl",
-
-            };
-            _db.Cars.Add(car);
-            _db.SaveChanges();
+			//};
+			//Db.Cars.Add(car);
+			//Db.SaveChanges();
             return View(car);
         }
 

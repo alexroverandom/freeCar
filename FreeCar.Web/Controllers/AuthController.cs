@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FreeCar.Web.Models;
 using FreeCar.Entities;
+using FreeCar.DataAccess;
 
 namespace FreeCar.Web.Controllers
 {
@@ -18,16 +19,18 @@ namespace FreeCar.Web.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+		private EntityContext _db;
 
-        public AuthController()
+        public AuthController(EntityContext db)
         {
+			_db = db;
         }
 
-        public AuthController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
-        {
-            UserManager = userManager;
-            SignInManager = signInManager;
-        }
+		//public AuthController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+		//{
+		//	UserManager = userManager;
+		//	SignInManager = signInManager;
+		//}
 
         public ApplicationSignInManager SignInManager
         {

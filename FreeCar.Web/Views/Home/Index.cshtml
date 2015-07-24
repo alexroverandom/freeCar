@@ -10,5 +10,8 @@
 </div>
 
 <div class="row">
-    <span>@Model.Name</span>
+	@if (Model != null)
+	{
+		<span>@Model.Name</span>
+	}
 </div>
