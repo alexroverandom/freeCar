@@ -198,3 +198,4 @@ FakesAssemblies/
 /FreeCar.Entities/App.config
 /FreeCar.DataAccess/App.config
 /FreeCar.Client/App.config
+/FreeCar.Web/Web.config
