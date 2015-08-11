@@ -17,6 +17,7 @@ namespace FreeCar.Web
 						"~/js/libraries/backbone.marionette/backbone.routefilter.js",
 						"~/js/libraries/jsrender.js",
 						"~/js/libraries/ajaxSetup.js",
+                        "~/js/libraries/angular.js",
 						
 						"~/js/libraries/spin.js",
 						"~/js/libraries/modernizr-2.7.1.js",
@@ -30,8 +31,8 @@ namespace FreeCar.Web
 						"~/js/bootstrap/dropdown.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/css/bootstrap.css"
-                      //"~/css/site.css"
+                      "~/css/bootstrap.css",
+                      "~/css/layout.css"
 					  ));
         }
     }
