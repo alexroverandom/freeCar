@@ -21,6 +21,8 @@ namespace FreeCar.Entities
         public CarType Type { get; set; }
 
         public int TechDataId { get; set; }
+		[JsonIgnore]
+		public TechData TechData { get; set; }
 
         public string DriverId { get; set; }
         [JsonIgnore]

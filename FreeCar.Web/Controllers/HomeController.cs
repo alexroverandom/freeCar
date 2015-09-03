@@ -16,13 +16,7 @@ namespace FreeCar.Web.Controllers
         public ActionResult Index()
         {
 			var car = Db.Cars.FirstOrDefault();
-			//var car = new Car()
-			//{
-			//	Name = "Carl",
 
-			//};
-			//Db.Cars.Add(car);
-			//Db.SaveChanges();
             return View(car);
         }
 

@@ -9,14 +9,15 @@ namespace FreeCar.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
 			bundles.Add(new ScriptBundle("~/bundles/libs")
-				.IncludeDirectory("~/js/libraries", "*.js", true);
+				.IncludeDirectory("~/js/libs", "*.js", true)
+				.IncludeDirectory("~/js/practices", "*.js", true));
+			bundles.Add(new ScriptBundle("~/bundles/app")
+				.IncludeDirectory("~/js/app", "*.js", true));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-						"~/js/bootstrap/modal.js",
-						"~/js/bootstrap/alert.js",
-						"~/js/bootstrap/dropdown.js"));
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap")
+				.IncludeDirectory("~/js/bootstrap", "*.js", true));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/css").Include(
                       "~/css/bootstrap.css",
                       "~/css/layout.css"
 					  ));

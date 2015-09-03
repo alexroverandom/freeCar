@@ -12,6 +12,8 @@ namespace FreeCar.Entities
         public int Id { get; set; }
 
         public string ModelName { get; set; }
+
+		public int CarBrandId { get; set; }
         [JsonIgnore]
         public CarBrand Brand { get; set; }
     }

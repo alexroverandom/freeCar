@@ -235,6 +235,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="js\app\app.js" />
+    <Content Include="js\app\controllers\cars.js" />
+    <Content Include="js\app\controllers\home.js" />
+    <Content Include="js\app\models\car.js" />
+    <Content Include="js\app\models\driver.js" />
     <Content Include="js\app\router.js" />
     <Content Include="js\libs\backbone.marionette\backbone.js" />
     <Content Include="js\libs\backbone.marionette\backbone.marionette.js" />
@@ -286,6 +290,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="js\app\views\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Car\" />
     <Folder Include="Views\Order\" />
@@ -300,6 +305,7 @@
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Index.cshtml" />
     <Content Include="Views\Shared\Templates\_cars.cshtml" />
+    <Content Include="Views\Shared\Templates\_map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FreeCar.DataAccess\FreeCar.DataAccess.csproj">

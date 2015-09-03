@@ -17,10 +17,17 @@
         return Backbone.Router.prototype.route.call(this, route, name, f);
     },
     routes: {
-        "categories/": "categories",
-        "categories/:id/children/": "categories"
+		"": "index",
+        "cars/": "cars",
+        "cars/:id/": "car"
     },
-    categories: function (id) {
-        App.Controllers.Categories.show(this.parseId(id));
+    index: function () {
+    	App.Controllers.Home.show();
+    },
+    cars: function (id) {
+    	App.Controllers.Cars.show();
+    },
+    car: function (id) {
+        App.Controllers.Car.show(this.parseId(id));
     }
 });
