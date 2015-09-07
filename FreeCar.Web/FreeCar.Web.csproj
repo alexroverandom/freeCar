@@ -240,6 +240,8 @@
     <Content Include="js\app\models\car.js" />
     <Content Include="js\app\models\driver.js" />
     <Content Include="js\app\router.js" />
+    <Content Include="js\app\views\home\cars.js" />
+    <Content Include="js\app\views\home\home.js" />
     <Content Include="js\libs\backbone.marionette\backbone.js" />
     <Content Include="js\libs\backbone.marionette\backbone.marionette.js" />
     <Content Include="js\libs\backbone.marionette\backbone.paginator.js" />
@@ -290,7 +292,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="js\app\views\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Car\" />
     <Folder Include="Views\Order\" />

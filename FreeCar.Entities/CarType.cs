@@ -11,7 +11,7 @@ namespace FreeCar.Entities
     {
         public int Id { get; set; }
 
-        [JsonIgnore]
-        public ICollection<Car> Cars { get; set; }
+		//[JsonIgnore]
+		//public ICollection<Car> Cars { get; set; }
     }
 }

@@ -14,18 +14,36 @@ namespace FreeCar.Entities
         public string Name { get; set; }
         public string Number { get; set; }
 
+		public int CarModelId { get; set; }
+		[JsonIgnore]
         public CarModel Model { get; set; }
 
-        public int CarTypeId { get; set; }
-        [JsonIgnore]
-        public CarType Type { get; set; }
+		//public int CarTypeId { get; set; }
+		//[JsonIgnore]
+		//public CarType Type { get; set; }
 
-        public int TechDataId { get; set; }
+        public int? TechDataId { get; set; }
 		[JsonIgnore]
 		public TechData TechData { get; set; }
 
         public string DriverId { get; set; }
         [JsonIgnore]
         public Driver ActiveDriver { get; set; }
+
+		public CarColor Color { get; set; }
     }
+
+	public enum CarColor 
+	{
+		Black,
+		White,
+		Green,
+		Red,
+		Blue,
+		Gray,
+		Metallic,
+		Yellow,
+		Pink,
+		Orange
+	}
 }

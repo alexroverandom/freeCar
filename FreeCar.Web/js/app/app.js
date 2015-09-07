@@ -5,7 +5,7 @@
 
     App.Views = {};
 
-    App.Views.Controls = {};
+    App.Views.Home = {};
 
     App.Constants = {};
 
