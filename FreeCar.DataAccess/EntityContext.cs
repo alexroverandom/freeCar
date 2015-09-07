@@ -30,7 +30,8 @@ namespace FreeCar.DataAccess
 
 		public DbSet<Driver> Drivers { get; set; }
 		public DbSet<Manager> Managers { get; set; }
-		public DbSet<Client> Clients { get; set; }
+		public DbSet<WebClient> Clients { get; set; }
+
 
 
 		public EntityContext()

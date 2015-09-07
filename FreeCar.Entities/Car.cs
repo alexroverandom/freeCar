@@ -26,9 +26,37 @@ namespace FreeCar.Entities
 		[JsonIgnore]
 		public TechData TechData { get; set; }
 
-        public string DriverId { get; set; }
-        [JsonIgnore]
-        public Driver ActiveDriver { get; set; }
+		//[JsonIgnore]
+		//public ICollection<Driver> ActiveDrivers 
+		//{
+		//	get 
+		//	{ 
+		//		return DriversHistory
+		//				.Where(dh => dh.CarId == Id && dh.IsActive)
+		//				.Select(dh => dh.Driver)
+		//				.ToList(); 
+		//	}
+		//}
+
+		//[JsonIgnore]
+		//public Driver ActiveDriver
+		//{
+		//	get
+		//	{
+		//		return DriversHistory.FirstOrDefault(dh => dh.CarId == Id && dh.IsActive && dh.IsMain) != null
+		//			? DriversHistory.FirstOrDefault(dh => dh.CarId == Id && dh.IsActive && dh.IsMain).Driver
+		//			: null;
+		//	}
+		//}
+
+		[JsonIgnore]
+		public ICollection<CarDriverHistory> DriversHistory { get; set; }
+
+		//[JsonIgnore]
+		//public ICollection<Driver> Drivers 
+		//{
+		//	get { return DriversHistory.Select(dh => dh.Driver).ToList(); }
+		//}
 
 		public CarColor Color { get; set; }
     }

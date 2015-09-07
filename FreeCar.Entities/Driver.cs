@@ -11,12 +11,29 @@ namespace FreeCar.Entities
 {
     public class Driver: WebUser
     {
-        [JsonIgnore]
-        public ICollection<Car> Cars { get; set; }
+		//[JsonIgnore]
+		//public ICollection<Car> ActiveCars 
+		//{ 
+		//	get 
+		//	{
+		//		return CarsHistory
+		//			.Where(ch => ch.DriverId == Id && ch.IsActive).Select(cd => cd.Car).ToList();
+		//	}
+		//}
 
-        public int ActiveCarId { get; set; }
-        [JsonIgnore]
-        public Car ActiveCar { get; set; }
+		//[JsonIgnore]
+		//public Car ActiveCar
+		//{
+		//	get
+		//	{
+		//		return CarsHistory.FirstOrDefault(ch => ch.DriverId == Id && ch.IsActive && ch.IsMain) != null 
+		//			? CarsHistory.FirstOrDefault(ch => ch.DriverId == Id && ch.IsActive && ch.IsMain).Car
+		//			: null;
+		//	}
+		//}
+
+		[JsonIgnore]
+		public ICollection<CarDriverHistory> CarsHistory { get; set; }
 
 		public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<Driver> manager)
 		{

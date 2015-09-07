@@ -16,6 +16,7 @@ namespace FreeCar.DataAccess.Migrations
 
         protected override void Seed(FreeCar.DataAccess.EntityContext context)
         {
+			var r = new Random();
 			var brands = _createCarBrands(context);
 
 			var models = new List<CarModel>
@@ -101,7 +102,7 @@ namespace FreeCar.DataAccess.Migrations
 				{
 					Model = m,
 					Number = Guid.NewGuid().ToString(),
-					Color = _getRandomColor(),
+					Color = _getRandomColor(r),
 					Name = String.Format("{0} {1}", m.Brand.Name, m.Name)
 				};
 				context.Cars.Add(car);
@@ -109,10 +110,9 @@ namespace FreeCar.DataAccess.Migrations
 			context.SaveChanges();
         }
 
-		private CarColor _getRandomColor() 
+		private CarColor _getRandomColor(Random r) 
 		{
 			var values = Enum.GetValues(typeof(CarColor)).Cast<CarColor>();
-			var r = new Random();
 			return values.ElementAt(r.Next(0, values.Count() - 1));
 		}
 
