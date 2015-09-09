@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model FreeCar.Web.Models.ViewModels.LayoutViewModel
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8" />
@@ -22,16 +23,39 @@
 		@Html.Partial("_LoginPartial")
 	</div>
 	<div class="container body-content">
-		@RenderBody()
+		<div class="page_content jMainRegion">
+			@RenderBody()
+		</div>
 		<hr />
 		<footer>
 			<p>&copy; @DateTime.Now.Year - free car for you 24/7</p>
 		</footer>
 	</div>
 
-	@Scripts.Render("~/bundles/libs")
-	@Scripts.Render("~/bundles/app")
-	@Scripts.Render("~/bundles/bootstrap")
-	@RenderSection("scripts", required: false)
+	<div class="jModalRegion"></div>
+
+	<div class="jTemplates">
+		@Html.Partial("Templates/Home/_home")
+		@Html.Partial("Templates/Home/_cars")
+	</div>
+
+	<div class="jScripts">
+		@Scripts.Render("~/bundles/libs")
+		@*@Scripts.Render("~/bundles/bootstrap")*@
+		@Scripts.Render("~/bundles/app")
+
+		<script>
+			App.Collections.cars.reset(@(Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Cars))));
+			App.Collections.carModels.reset(@(Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.CarModels))));
+			App.Collections.carBrands.reset(@(Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.CarBrands))));
+			@*App.Collections.cars.reset(@(Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Cars))));
+			App.Collections.cars.reset(@(Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Cars))));
+			App.Collections.cars.reset(@(Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Cars))));
+			App.Collections.cars.reset(@(Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Cars))));*@
+
+			App.start();
+		</script>
+		@RenderSection("scripts", required: false)
+	</div>
 </body>
 </html>

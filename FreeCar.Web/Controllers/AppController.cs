@@ -1,4 +1,5 @@
 ﻿using FreeCar.DataAccess;
+using FreeCar.Web.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace FreeCar.Web.Controllers
         // GET: App
         public ActionResult Index()
         {
-            return View();
+            return View(new LayoutViewModel(Db));
         }
     }
 }

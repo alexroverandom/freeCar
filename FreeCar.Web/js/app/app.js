@@ -1,15 +1,15 @@
 ﻿(function () {
-    var App = new Backbone.Marionette.Application();
-    App.Models = {};
-    App.Controllers = {};
+    var app = new Backbone.Marionette.Application();
+    app.Models = {};
+    app.Controllers = {};
 
-    App.Views = {};
+    app.Views = {};
 
-    App.Views.Home = {};
+    app.Views.Home = {};
 
-    App.Constants = {};
+    app.Constants = {};
 
-    App.Globals = {
+    app.Globals = {
 
     };
 
@@ -35,9 +35,9 @@
         alert("Start");
     });
 
-    App.on("before:start", function () {
-        alert("PreStrart");
-    });
+    //App.on("before:start", function () {
+    //    alert("PreStrart");
+    //});
 
 
     App.addRegions({

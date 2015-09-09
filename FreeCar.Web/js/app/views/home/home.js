@@ -13,8 +13,10 @@
 		"click @ui.refresh": "showTinymceToShort"
 	},
 	onRender: function () {
-		this.cars.show(new App.Views.ActionChangeStatus({
-			model: this.model
-		}));
+		var view = new App.Views.Home.Cars({
+			collection: App.Collections.cars
+		});
+		//App.Controllers.Cars.activeForHome(this.cars);
+		this.cars.show(view);
 	}
 });
