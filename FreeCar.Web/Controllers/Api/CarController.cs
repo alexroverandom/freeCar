@@ -1,4 +1,5 @@
 ﻿using FreeCar.DataAccess;
+using FreeCar.Web.Models.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,11 @@ namespace FreeCar.Web.Controllers.Api
             var cars = _db.Cars.ToList();
             return new { cars };
         }
+
+		[HttpPost]
+		public object CarReadyToWork(DriverDto req) 
+		{
+			return new { };
+		}
     }
 }
