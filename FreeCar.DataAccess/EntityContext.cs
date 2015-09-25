@@ -31,6 +31,8 @@ namespace FreeCar.DataAccess
 		public DbSet<Driver> Drivers { get; set; }
 		public DbSet<Manager> Managers { get; set; }
 		public DbSet<WebClient> Clients { get; set; }
+		public DbSet<OrderRequest> Requests { get; set; }
+		public DbSet<CarDriverHistory> Histories { get; set; }
 
 
 

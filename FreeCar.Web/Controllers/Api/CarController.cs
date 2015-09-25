@@ -12,7 +12,7 @@ namespace FreeCar.Web.Controllers.Api
     {
 		public CarController(EntityContext db) : base(db) { }
 
-        // GET: Order
+        [HttpGet]
         public object GetCars()
         {
             var cars = _db.Cars.ToList();
