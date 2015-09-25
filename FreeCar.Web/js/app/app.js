@@ -32,7 +32,6 @@
     });
 
     App.on("start", function (options) {
-        alert("Start");
     });
 
     //App.on("before:start", function () {

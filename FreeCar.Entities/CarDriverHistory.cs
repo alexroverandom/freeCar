@@ -26,5 +26,9 @@ namespace FreeCar.Entities
 		public DateTime DateStart { get; set; }
 
 		public DateTime? DateStop { get; set; }
+
+		public bool IsReady { get; set; }
+
+		public bool OnLine { get; set; }
 	}
 }

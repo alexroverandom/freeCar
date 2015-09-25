@@ -14,6 +14,8 @@ namespace FreeCar.Entities
         public string Name { get; set; }
         public string Number { get; set; }
 
+		public bool IsActive { get; set; }
+
 		public int CarModelId { get; set; }
 		[JsonIgnore]
         public CarModel Model { get; set; }

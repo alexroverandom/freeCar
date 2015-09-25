@@ -29,29 +29,32 @@ namespace FreeCar.Client
             InitializeComponent();
         }
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private async void Button_Click(object sender, RoutedEventArgs e)
 		{
-			var task = new Task<IEnumerable<Car>>();
-			var cars = GetCars();
-			Console.Write("Count = ");
+			var cars = await GetCars();
+			Console.Write("Count = ", cars.Count());
 		}
 
-		private async Task<IEnumerable<Car>> GetCars() 
+		private async Task<List<Car>> GetCars() 
 		{
-			var db = new EntityContext();
 			var cars = new List<Car>();
 			using (var client = new HttpClient()) 
 			{
-				var requestUri = new Uri("http://localhost:1659/car/getcars");
+				var requestUri = new Uri("http://localhost:1659/api/car/getcars");
 				var response = await client.GetAsync(requestUri);
 				if (response.StatusCode == System.Net.HttpStatusCode.OK) 
 				{
 					var json = await response.Content.ReadAsStringAsync();
-					var data = await JsonConvert.DeserializeObjectAsync<IEnumerable<Car>>(json);
-					return data;
+					var data = JsonConvert.DeserializeObject<CarsDto>(json);
+					return data.Cars;
 				}
 			}
 			return cars;
 		}
     }
+
+	public class CarsDto
+	{
+		public List<Car> Cars { get; set; }
+	}
 }
