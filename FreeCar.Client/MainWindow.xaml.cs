@@ -32,7 +32,8 @@ namespace FreeCar.Client
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			var task = new Task<IEnumerable<Car>>();
-			var cars = GetCars();
+
+			var cars = await Task.Run(() => GetCars());
 			Console.Write("Count = ");
 		}
 

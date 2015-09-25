@@ -19,7 +19,8 @@
     routes: {
 		"": "index",
         "cars/": "cars",
-        "cars/:id/": "car"
+        "cars/:id/": "car",
+		"order/": "newOrder"
     },
     index: function () {
     	App.Controllers.Home.show();
@@ -29,5 +30,8 @@
     },
     car: function (id) {
         App.Controllers.Car.show(this.parseId(id));
+    },
+    newOrder: function () {
+    	App.Controllers.Order.newOrder();
     }
 });
