@@ -12,6 +12,6 @@ namespace FreeCar.Services
 	public interface IFreeCarService
 	{
 		[OperationContract]
-		public List<Car> GetActiveCars();
+		List<Car> GetActiveCars();
 	}
 }

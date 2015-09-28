@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 
 namespace FreeCar.Entities
 {
-	public class OrderRequest
+	public class OrderRequest : IEntity
 	{
+		public int Id { get; set; }
 		public WaitingPeriod Period { get; set; }
 		public ServiceClass Class { get; set; }
 
 		public MapPoint StartPoint { get; set; }
 		public MapPoint EndPoint { get; set; }
 		public List<MapPoint> RoutePoints { get; set; }
+
+
 	}
 
-	public enum WaitingPeriod 
+	public enum WaitingPeriod
 	{
 		About_15,
 		About_30,
@@ -24,7 +27,7 @@ namespace FreeCar.Entities
 		Custom
 	}
 
-	public enum ServiceClass 
+	public enum ServiceClass
 	{
 		Econom,
 		Business,

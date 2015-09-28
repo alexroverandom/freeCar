@@ -38,7 +38,8 @@ namespace FreeCar.Web.Controllers.Api
 				EndPoint = req.EndPoint,
 				RoutePoints = req.RoutePoints
 			};
-			var drivers = Get
+			//var drivers = Get
+			return new object { };
 		}
     }
 }

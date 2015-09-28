@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FreeCar.Services.DriverService
 {
-	public partial class FreeCarService: IFreeCarService
+	public partial class FreeCarService
 	{
 
 	}

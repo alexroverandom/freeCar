@@ -17,9 +17,16 @@ namespace FreeCar.Services
 			_db = db;
 		}
 
+		public FreeCarService()
+		{
+			_db = new EntityContext();
+		}
+
 		public List<Car> GetActiveCars()
 		{
-			return _db.Histories.Where(h => h.IsReady).Select(h => h.Car).ToList();
+			//return _db.Histories.Where(h => h.IsReady).Select(h => h.Car).ToList();
+			var cars = _db.Cars.ToList();
+			return cars;
 		}
 	}
 }
