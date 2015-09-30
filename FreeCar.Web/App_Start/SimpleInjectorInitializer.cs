@@ -9,6 +9,8 @@ namespace FreeCar.Web.App_Start
     using SimpleInjector.Extensions;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
+	using FreeCar.Services;
+	using FreeCar.DataAccess;
     
     public static class SimpleInjectorInitializer
     {
@@ -28,8 +30,9 @@ namespace FreeCar.Web.App_Start
         }
      
         private static void InitializeContainer(Container container)
-        {
-
+		{
+			container.Register<EntityContext, EntityContext>(Lifestyle.Scoped);
+			container.Register<IFreeCarService, FreeCarService>(Lifestyle.Scoped);
             // For instance:
             // container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);
         }

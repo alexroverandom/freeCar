@@ -17,10 +17,10 @@ namespace FreeCar.Services
 			_db = db;
 		}
 
-		public FreeCarService()
-		{
-			_db = new EntityContext();
-		}
+		//public FreeCarService()
+		//{
+		//	_db = new EntityContext();
+		//}
 
 		public List<Car> GetActiveCars()
 		{
