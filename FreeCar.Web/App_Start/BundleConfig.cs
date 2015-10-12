@@ -31,7 +31,7 @@ namespace FreeCar.Web
 			//	.IncludeDirectory("~/js/bootstrap", "*.js", true));
 
             bundles.Add(new StyleBundle("~/css").Include(
-                      "~/css/bootstrap.css",
+                      "~/css/libs/bootstrap.css",
                       "~/css/layout.css"
 					  ));
         }

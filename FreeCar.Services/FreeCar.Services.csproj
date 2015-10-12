@@ -68,12 +68,10 @@
     <Compile Include="FreeCarService.cs" />
     <Compile Include="CarService\FreeCarService.cs" />
     <Compile Include="IFreeCarService.cs" />
+    <Compile Include="OrderService\FreeCarService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

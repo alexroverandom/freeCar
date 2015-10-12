@@ -1,13 +1,17 @@
-﻿using System;
+﻿using FreeCar.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FreeCar.Services.DriverService
+namespace FreeCar.Services
 {
-	public partial class FreeCarService
+	public partial class FreeCarService : IFreeCarService
 	{
-
+		public List<Driver> GetDrivers()
+		{
+			return _db.Drivers.ToList();
+		}
 	}
 }

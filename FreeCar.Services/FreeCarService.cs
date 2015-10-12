@@ -12,10 +12,10 @@ namespace FreeCar.Services
 	{
 		private EntityContext _db;
 
-		public FreeCarService(EntityContext db) 
-		{
-			_db = db;
-		}
+		//public FreeCarService(EntityContext db) 
+		//{
+		//	_db = db;
+		//}
 
 		public FreeCarService()
 		{

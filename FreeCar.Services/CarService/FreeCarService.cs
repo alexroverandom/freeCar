@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FreeCar.Services
 {
-	public partial class FreeCarService
+	public partial class FreeCarService: IFreeCarService
 	{
 		public List<Car> GetCars()
 		{

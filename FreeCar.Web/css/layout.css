@@ -12,3 +12,7 @@
 .main-menu li {
 	display: inline;
 }
+
+.form-control {
+	max-width: 400px;
+}

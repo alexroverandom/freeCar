@@ -1,4 +1,5 @@
 ﻿using FreeCar.DataAccess;
+using FreeCar.Web.FreeCarService;
 using FreeCar.Web.Models.Dtos;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,10 @@ namespace FreeCar.Web.Controllers.Api
 {
     public class CarController : ApiBaseController
     {
-		public CarController(EntityContext db) : base(db) { }
-
         [HttpGet]
         public object GetCars()
         {
-            var cars = _db.Cars.ToList();
+			var cars = CarService.GetActiveCars();
             return new { cars };
         }
 

@@ -1,5 +1,6 @@
 ﻿using FreeCar.DataAccess;
 using FreeCar.Entities;
+using FreeCar.Web.FreeCarService;
 using FreeCar.Web.Models.Dtos;
 using System;
 using System.Collections.Generic;
@@ -11,12 +12,10 @@ namespace FreeCar.Web.Controllers.Api
 {
     public class OrderController : ApiBaseController
     {
-        public OrderController(EntityContext db): base(db) { }
-
         // GET: Order
         public object GetOrders()
         {
-            var orders = _db.Orders.ToList();
+			var orders = "";//CarService.GetOrders();
             return new { orders };
         }
 

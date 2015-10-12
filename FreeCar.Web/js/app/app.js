@@ -5,7 +5,8 @@
 
     app.Views = {};
 
-    app.Views.Home = {};
+    app.Views.Order = {};
+    app.Views.Car = {};
 
     app.Constants = {};
 

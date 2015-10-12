@@ -1,4 +1,5 @@
 ﻿using FreeCar.DataAccess;
+using FreeCar.Web.FreeCarService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,6 @@ namespace FreeCar.Web.Controllers.Api
 {
     public class RouteController : ApiBaseController
     {
-		public RouteController(EntityContext context) : base(context) { }
-
         // GET: Route
         public object Index()
         {

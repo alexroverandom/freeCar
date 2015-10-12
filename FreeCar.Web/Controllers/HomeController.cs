@@ -12,10 +12,9 @@ namespace FreeCar.Web.Controllers
     {
         //private EntityContext _db = new EntityContext();
 
-		public HomeController(EntityContext db) : base(db) { }
         public ActionResult Index()
         {
-			var car = Db.Cars.FirstOrDefault();
+			var car = CarService.GetActiveCars().FirstOrDefault();
 
             return View(car);
         }

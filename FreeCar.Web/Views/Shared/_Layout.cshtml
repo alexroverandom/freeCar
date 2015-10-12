@@ -8,17 +8,21 @@
 	@Styles.Render("~/css")
 
 </head>
-<body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+<body class="main-container">
+	<header>
+		@*<div>
+			<img src="/img/logo.svg" />
+		</div>*@
+		<div><h1>Служба такси</h1></div>
+	</header>
+	<div class="navbar">
 		<ul class="nav navbar-nav">
 			@*<li><a href="/">Главная</a></li>*@
-			<li><a href="/services/">Услуги</a></li>
-			<li><a href="/quickorder/">Сделать заказ</a></li>
-			<li><a href="/comein/">Принять участие</a></li>
-			<li><a href="/drivers/">Водители</a></li>
-			<li><a href="/cars/">Наши авто</a></li>
-			<li><a href="/map/">Карта</a></li>
-			<li><a href="/blog/">Блог</a></li>
+			<li><a href="/order/">Заказ такси</a></li>
+			<li><a href="/marrige/">Прокат свадебных машин</a></li>
+			<li><a href="/medical/">Услуги спецтранспорта</a></li>
+			<li><a href="/about/">О нас</a></li>
+			<li><a href="/contacts/">Контакты</a></li>
 		</ul>
 		@Html.Partial("_LoginPartial")
 	</div>
@@ -35,8 +39,8 @@
 	<div class="jModalRegion"></div>
 
 	<div class="jTemplates">
-		@Html.Partial("Templates/Home/_home")
-		@Html.Partial("Templates/Home/_cars")
+		@Html.Partial("Templates/Order/_order")
+		@Html.Partial("Templates/Order/_cars")
 	</div>
 
 	<div class="jScripts">

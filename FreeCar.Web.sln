@@ -22,6 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCar.Web.Admin", "FreeCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCar.Services", "FreeCar.Services\FreeCar.Services.csproj", "{2F7FB3C2-2219-4EE2-B9A7-8FB1A50D2182}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCar.Server", "FreeCar.Server\FreeCar.Server.csproj", "{FB250C7C-5CFB-4382-A1FE-830DF98129A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCar.TestServer", "FreeCar.TestServer\FreeCar.TestServer.csproj", "{D7613902-7553-409E-9426-2D128089306A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +56,14 @@ Global
 		{2F7FB3C2-2219-4EE2-B9A7-8FB1A50D2182}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F7FB3C2-2219-4EE2-B9A7-8FB1A50D2182}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F7FB3C2-2219-4EE2-B9A7-8FB1A50D2182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB250C7C-5CFB-4382-A1FE-830DF98129A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB250C7C-5CFB-4382-A1FE-830DF98129A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB250C7C-5CFB-4382-A1FE-830DF98129A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB250C7C-5CFB-4382-A1FE-830DF98129A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7613902-7553-409E-9426-2D128089306A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7613902-7553-409E-9426-2D128089306A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7613902-7553-409E-9426-2D128089306A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7613902-7553-409E-9426-2D128089306A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

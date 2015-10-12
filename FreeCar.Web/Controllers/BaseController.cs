@@ -1,4 +1,5 @@
 ﻿using FreeCar.DataAccess;
+using FreeCar.Web.FreeCarService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,12 @@ namespace FreeCar.Web.Controllers
 {
     public class BaseController : Controller
     {
-		protected EntityContext Db;
+		private FreeCarServiceClient _service;
+		public FreeCarServiceClient CarService { get { return _service; } }
 
-		public BaseController(EntityContext db)
+		public BaseController()
 		{
-			Db = db;
+			_service = new FreeCarServiceClient("NetTcpBinding_IFreeCarService");
 		}
     }
 }

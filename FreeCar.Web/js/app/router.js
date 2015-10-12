@@ -17,10 +17,10 @@
         return Backbone.Router.prototype.route.call(this, route, name, f);
     },
     routes: {
-		"": "index",
+		"": "order",
         "cars/": "cars",
         "cars/:id/": "car",
-		"order/": "newOrder"
+		"order/": "order"
     },
     index: function () {
     	App.Controllers.Home.show();
@@ -31,7 +31,7 @@
     car: function (id) {
         App.Controllers.Car.show(this.parseId(id));
     },
-    newOrder: function () {
+    order: function () {
     	App.Controllers.Order.newOrder();
     }
 });

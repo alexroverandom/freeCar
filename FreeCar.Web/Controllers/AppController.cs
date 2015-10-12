@@ -10,11 +10,15 @@ namespace FreeCar.Web.Controllers
 {
     public class AppController : BaseController
     {
-		public AppController(EntityContext db) : base(db) { }
         // GET: App
         public ActionResult Index()
         {
-            return View(new LayoutViewModel(Db));
+			var vm = new LayoutViewModel()
+			{
+				Cars = CarService.GetActiveCars()
+				//Cars = CarService
+			};
+            return View(vm);
         }
     }
 }

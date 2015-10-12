@@ -1,4 +1,6 @@
 ﻿using FreeCar.DataAccess;
+using FreeCar.Web;
+using FreeCar.Web.FreeCarService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +12,12 @@ namespace FreeCar.Web.Controllers.Api
 {
     public class ApiBaseController : ApiController
     {
-        protected EntityContext _db;
+		private FreeCarServiceClient _service;
+		public FreeCarServiceClient CarService { get { return _service; } }
 
-        public ApiBaseController(EntityContext context) 
+		public ApiBaseController() 
         {
-            _db = context;
+			_service = new FreeCarServiceClient("NetTcpBinding_IFreeCarService");
         }
     }
 }

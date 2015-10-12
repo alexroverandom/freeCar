@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FreeCar.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FreeCar.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Microsoft.AspNet.Identity.EntityFramework" />
+  <xs:complexType name="ArrayOfCar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Car" nillable="true" type="tns:Car" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCar" nillable="true" type="tns:ArrayOfCar" />
+  <xs:complexType name="Car">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarModelId" type="xs:int" />
+      <xs:element minOccurs="0" name="Color" type="tns:CarColor" />
+      <xs:element minOccurs="0" name="DriversHistory" nillable="true" type="tns:ArrayOfCarDriverHistory" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="tns:CarModel" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechData" nillable="true" type="tns:TechData" />
+      <xs:element minOccurs="0" name="TechDataId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Car" nillable="true" type="tns:Car" />
+  <xs:simpleType name="CarColor">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Black" />
+      <xs:enumeration value="White" />
+      <xs:enumeration value="Green" />
+      <xs:enumeration value="Red" />
+      <xs:enumeration value="Blue" />
+      <xs:enumeration value="Gray" />
+      <xs:enumeration value="Metallic" />
+      <xs:enumeration value="Yellow" />
+      <xs:enumeration value="Pink" />
+      <xs:enumeration value="Orange" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CarColor" nillable="true" type="tns:CarColor" />
+  <xs:complexType name="ArrayOfCarDriverHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarDriverHistory" nillable="true" type="tns:CarDriverHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarDriverHistory" nillable="true" type="tns:ArrayOfCarDriverHistory" />
+  <xs:complexType name="CarDriverHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Car" nillable="true" type="tns:Car" />
+      <xs:element minOccurs="0" name="CarId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateStart" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateStop" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Driver" nillable="true" type="tns:Driver" />
+      <xs:element minOccurs="0" name="DriverId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReady" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OnLine" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarDriverHistory" nillable="true" type="tns:CarDriverHistory" />
+  <xs:complexType name="Driver">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WebUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarsHistory" nillable="true" type="tns:ArrayOfCarDriverHistory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Driver" nillable="true" type="tns:Driver" />
+  <xs:complexType name="WebUser">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.AspNet.Identity.EntityFramework" base="q1:IdentityUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PhoneNomber" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WebUser" nillable="true" type="tns:WebUser" />
+  <xs:complexType name="CarModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="tns:CarBrand" />
+      <xs:element minOccurs="0" name="CarBrandId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarModel" nillable="true" type="tns:CarModel" />
+  <xs:complexType name="CarBrand">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Countries" nillable="true" type="tns:ArrayOfCountry" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarBrand" nillable="true" type="tns:CarBrand" />
+  <xs:complexType name="ArrayOfCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Country" nillable="true" type="tns:Country" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountry" nillable="true" type="tns:ArrayOfCountry" />
+  <xs:complexType name="Country">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Country" nillable="true" type="tns:Country" />
+  <xs:complexType name="TechData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TechData" nillable="true" type="tns:TechData" />
+</xs:schema>

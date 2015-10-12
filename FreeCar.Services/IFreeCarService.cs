@@ -13,5 +13,17 @@ namespace FreeCar.Services
 	{
 		[OperationContract]
 		List<Car> GetActiveCars();
+
+		[OperationContract]
+		List<Car> GetCars();
+
+		[OperationContract]
+		List<Order> GetOrders(string clientId);
+
+		[OperationContract]
+		Order CreateOrder(OrderRequest orderReq, string clientId = null);
+
+		[OperationContract]
+		List<Driver> GetDrivers();
 	}
 }
